@@ -1,6 +1,8 @@
 # tailor-recommender
 This is the repo for the python reccomendation engine the app uses heavily.
 
+Note: Should probably be weighted
+
 The engine takes a dataset containing a user's current location, with their favourite restaurants and cuisines, and recommends a restaurant (or cuisine to try, perhaps) to them within their specified radius.
 
 ### Example
@@ -24,16 +26,27 @@ Burgers
 Sushi
 ```
 
+keys.txt (': ' is important for formatting)
+```
+GOOGLE_KEY: <key>
+YELP_KEY: <key>
+YELP_SECRET: <key>
+YELP_TOKEN: <key>
+YELP_TOKEN_SECRET: <key>
+```
+
 bash
 
 ```
-$ python3 recommend.py -f restaurants.txt cuisines.txt -l toronto -r 10 -num 3
+$ python3 recommend.py -r restaurants.txt -c cuisines.txt -k keys.txt -l toronto --radius 10 --num 3
     KATANA, Sushi
     Salad King, Thai
     Five Guys, Burgers
 ```
 
-- `-f` for files
+- `-r` for restaurants
+- `-c` for cuisines
+- `-k` for (API) keys
 - `-l` for location
-- `-r` for radius, in km
-- `-num` for number of result restaurants requested 
+- `--radius` for radius, in km
+- `--num` for number of result restaurants requested 
