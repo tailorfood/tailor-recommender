@@ -79,7 +79,7 @@ data.json
 bash
 
 ```
-$ python3 recommend.py -f data.json -u jake --num 3
+$ python3 recommend.py -f data.json -u jake -n 3
     KATANA, Sushi
     Salad King, Thai
     Five Guys, Burgers
