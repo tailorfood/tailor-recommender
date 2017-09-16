@@ -27,19 +27,23 @@ data.json
             "restaurants": [
                 {
                     "name": "Pai Northern Kitchen",
-                    "cuisine": "Thai"
+                    "cuisine": "Thai",
+                    "like": true
                 },
                 {
                     "name": "Momofuku Noodle Bar",
-                    "cuisine": "Ramen"
+                    "cuisine": "Ramen",
+                    "like": false
                 },
                 {
                     "name": "McDonald's",
-                    "cuisine": "Burgers"
+                    "cuisine": "Burgers",
+                    "like": true
                 },
                 {
                     "name": "Coco Rice Thai",
-                    "cuisine": "Thai"
+                    "cuisine": "Thai",
+                    "like": true
                 }
             ],
             "cuisines": [ "Thai", "Ramen", "Burgers" ]
@@ -54,15 +58,18 @@ data.json
             "restaurants": [
                 {
                     "name": "Fushimi",
-                    "cuisine": "Sushi"
+                    "cuisine": "Sushi",
+                    "like": true
                 },
                 {
                     "name": "Copacabana Brazilian Steakhouse",
-                    "cuisine": "Brazililian"
+                    "cuisine": "Brazililian",
+                    "like": true
                 },
                 {
                     "name": "Five Guys",
-                    "cuisine": "Burgers"
+                    "cuisine": "Burgers",
+                    "like": false
                 }
             ],
             "cuisines": [ "Sushi", "Brazililian", "Burgers" ]
