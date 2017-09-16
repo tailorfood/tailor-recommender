@@ -5,6 +5,12 @@ Note: Should probably be weighted
 
 The engine takes a dataset containing a user's current location, with their favourite restaurants and cuisines, and recommends a restaurant (or cuisine to try, perhaps) to them within their specified radius.
 
+### Potential goodies
+
+- http://surpriselib.com/
+- http://pandas.pydata.org/
+- https://turi.com/
+
 ### Example
 
 **Note:** the format of the data is subject to change
