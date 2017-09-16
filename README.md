@@ -13,38 +13,73 @@ The engine takes a dataset containing a user's current location, with their favo
 
 ### Example
 
-**Note:** the format of the data is subject to change
-
-restaurants.txt (sorted favourite-first)
+data.json
 ```
-Pai Northern Kitchen, Thai
-JaBistro, Sushi
-Momofuku Noodle Bar, Ramen
-McDonald's, Burgers
-Coco Rice Thai, Thai
-```
-
-cuisines.txt (sorted favourite-first)
-```
-Thai
-Ramen
-Burgers
-Sushi
-```
-
-keys.txt (': ' is important for formatting)
-```
-GOOGLE_KEY: <key>
-YELP_KEY: <key>
-YELP_SECRET: <key>
-YELP_TOKEN: <key>
-YELP_TOKEN_SECRET: <key>
+{
+    "users": [
+        {
+            "username": "jake",
+            "location": {
+                "lat": 42.123123,
+                "lon": 45.131555
+            },
+            "radius": 10,
+            "restaurants": [
+                {
+                    "name": "Pai Northern Kitchen",
+                    "cuisine": "Thai"
+                },
+                {
+                    "name": "Momofuku Noodle Bar",
+                    "cuisine": "Ramen"
+                },
+                {
+                    "name": "McDonald's",
+                    "cuisine": "Burgers"
+                },
+                {
+                    "name": "Coco Rice Thai",
+                    "cuisine": "Thai"
+                }
+            ],
+            "cuisines": [ "Thai", "Ramen", "Burgers" ]
+        },
+        {
+            "username": "jason",
+            "location": {
+                "lat": 42.123123,
+                "lon": 45.131555
+            },
+            "radius": 12,
+            "restaurants": [
+                {
+                    "name": "Fushimi",
+                    "cuisine": "Sushi"
+                },
+                {
+                    "name": "Copacabana Brazilian Steakhouse",
+                    "cuisine": "Brazililian"
+                },
+                {
+                    "name": "Five Guys",
+                    "cuisine": "Burgers"
+                }
+            ],
+            "cuisines": [ "Sushi", "Brazililian", "Burgers" ]
+        }
+    ],
+    "keys": {
+        "GOOGLE_KEY": <key>,
+        "YELP_ID": <key>,
+        "YELP_SECRET": <key>
+    }
+}
 ```
 
 bash
 
 ```
-$ python3 recommend.py -r restaurants.txt -c cuisines.txt -k keys.txt -l toronto --radius 10 --num 3
+$ python3 recommend.py -f data.json -u jake --num 3
     KATANA, Sushi
     Salad King, Thai
     Five Guys, Burgers
