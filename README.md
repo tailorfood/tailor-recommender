@@ -79,7 +79,7 @@ data.json
 bash
 
 ```
-$ python3 recommend.py -f data.json -u jake -n 3 
+$ ./recommend.py -n 3 -u jake -f data.json
 starting tailorfood reccomender engine...
 
 {'name': 'KATANA', 'cuisine': 'Sushi'} (cuisine like Ramen)
