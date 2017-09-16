@@ -9,25 +9,31 @@ The engine takes a dataset containing a user's current location, with their favo
 
 restaurants.txt (sorted favourite-first)
 ```
-    Pai Northern Kitchen, Thai
-    JaBistro, Sushi
-    Momofuku Noodle Bar, Ramen
-    McDonald's, Burgers
-    Coco Rice Thai, Thai
+Pai Northern Kitchen, Thai
+JaBistro, Sushi
+Momofuku Noodle Bar, Ramen
+McDonald's, Burgers
+Coco Rice Thai, Thai
 ```
 
 cuisines.txt (sorted favourite-first)
 ```
-    Thai
-    Ramen
-    Burgers
-    Sushi
+Thai
+Ramen
+Burgers
+Sushi
 ```
 
 bash
+
 ```
-    $ python3 recommend.py -f restaurants.txt cuisines.txt -num 3
-        KATANA, Sushi
-        Salad King, Thai
-        Five Guys, Burgers
+$ python3 recommend.py -f restaurants.txt cuisines.txt -l toronto -r 10 -num 3
+    KATANA, Sushi
+    Salad King, Thai
+    Five Guys, Burgers
 ```
+
+- `-f` for files
+- `-l` for location
+- `-r` for radius, in km
+- `-num` for number of result restaurants requested 
