@@ -85,9 +85,6 @@ $ python3 recommend.py -f data.json -u jake -n 3
     Five Guys, Burgers
 ```
 
-- `-r` for restaurants
-- `-c` for cuisines
-- `-k` for (API) keys
-- `-l` for location
-- `--radius` for radius, in km
-- `--num` for number of result restaurants requested 
+- `-f` for data file
+- `-u` for username
+- `-n` for number of return values
