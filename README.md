@@ -85,6 +85,7 @@ $ python3 recommend.py -f data.json -u jake -n 3
     Five Guys, Burgers
 ```
 
-- `-f` for data file
-- `-u` for username
-- `-n` for number of return values
+- `-f` is for file that holds all our data
+- `-u` is for username
+- `-n` is for for the number of return values [(down here in the deep blue sea)](https://www.youtube.com/watch?v=og8NywgVebU)
+
