@@ -46,12 +46,12 @@ def recommend(args):
         return reccomendation:
          - if result is already in their favourites, reccomend another
     '''
-    return [args]
+    return args["restaurants"]
 
 if __name__ == "__main__":
     args = parse_args()
 
-    print("starting tailorfood reccomender engine...")
+    print("starting tailorfood reccomender engine...\n")
     for x in recommend(args): print(x)
-    print("closing.")
+    print("\nclosing.")
 

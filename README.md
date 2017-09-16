@@ -79,10 +79,14 @@ data.json
 bash
 
 ```
-$ python3 recommend.py -f data.json -u jake -n 3
-    KATANA, Sushi
-    Salad King, Thai
-    Five Guys, Burgers
+$ python3 recommend.py -f data.json -u jake -n 3 
+starting tailorfood reccomender engine...
+
+{'name': 'KATANA', 'cuisine': 'Sushi'} (cuisine like Ramen)
+{'name': 'Salad King', 'cuisine': 'Ramen'} (restaurant like Pai Northern Kitchen)
+{'name': 'Five Guys', 'cuisine': 'Burgers'} (restaurant and cuisine like McDonald's)
+
+closing.
 ```
 
 - `-f` is for file that holds all our data
