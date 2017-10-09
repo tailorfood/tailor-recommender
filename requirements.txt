@@ -1,0 +1,4 @@
+# pip3 install -r requirements.txt
+pandas ~= 0.20.3
+numpy ~= 1.13.3
+scipy ~= 0.19.1
