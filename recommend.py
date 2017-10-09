@@ -48,6 +48,7 @@ def recommend(args):
         return reccomendation:
          - if result is already in their favourites, reccomend another
     '''
+
     return args["restaurants"]
 
 if __name__ == "__main__":
