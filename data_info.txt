@@ -1,0 +1,53 @@
+NONE OF THE DATASETS HAVE HEADERS BECAUSE PANDAS INSERTS THEM FOR US. USER_SAMPLE HAS HEADERS CAUSE WE DONT USE THAT YET. 
+WE WILL HAVE TO REMOVE HEADERS IF WE END UP USING IT.
+
+
+user_sample.csv dataset contains:
+
+Uid rID rating
+
+restaurant_sample.csv dataset contains:
+
+restaurant rID sushi asian thai noodles burgers western brazillia new ramen japanese. will be 1 or 0 for cuisines.
+
+
+All the data together - easy to visualize if the recommender is correct if data is put together like this:
+
+user,uID,restaurant,rID,cuisine,rating
+jake,1,Pai Northern Kitchen,1,Thai,5
+jake,1,Momofuku Noodle Bar,2,Ramen,1
+jake,1,McDonald's,3,Burgers,4
+jake,1,Coco Rice Thai,4,Thai,4
+jason,2,Fushimi,5,Sushi,4
+jason,2,Copacabana Brazilian Steakhouse,6,Brazillian,5
+jason,2,Five Guys,Burgers,7,1
+jason,2,Coco Rice Thai,4,Thai,1
+tracy,3,Fushimi,5,Sushi,5
+tracy,3,Copacabana Brazilian Steakhouse,6,Brazillian,5
+tracy,3,Pai Northern Kitchen,1,Thai,5
+tracy,3,Five Guys,Burgers,7,1
+tracy,3,Coco Rice Thai,4,Thai,4
+john,4,Coco Rice Thai,4,Thai,3
+john,4,McDonald's,3,Burgers,4
+john,4,Pai Northern Kitchen,1,Thai,5
+john,4,Momofuku Noodle Bar,2,Ramen,1
+john,4,New Restaurant,8,Thai,5
+tim,5,Fushimi,5,Thai,4
+tim,5,Copacabana Brazilian Steakhouse,6,Brazillian,5
+tim,5,Five Guys,Burgers,7,1
+tim,5,Coco Rice Thai,4,Thai,1
+tim,5,New RestaurantB,9,Sushi,4
+
+
+
+
+When asked to recommend 2 places for jason to eat, it recommended NewRestaurantB (similiar to fushimi that i like) and Pai (has similiar cuisine characteristics).
+
+tracy, mcdonalds (which is off cause five guys is disliked) and momofuko (good).
+
+jacob, recommends New Restaurant (which is name of the restaurant lmao) (good cause you rated thai very high, and new restaurant is thai) and New RestaurantB (which i guess is okay? cause it has similiar cuisines as PAI and Coco) and five guys (if given 3 recommendations, which is good cause you like 5 guys).
+
+
+
+
+
