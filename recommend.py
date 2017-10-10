@@ -86,6 +86,23 @@ def recommend_food(predictions, uID, rID, original_ratings, num_recommendations,
 
     return user_full, recommendations
 
+def predict_ratings(R_demeaned, user_ratings_mean, R_df):
+    # this does singular value decomposition.. not to sure what that means.. but it works.. 
+    # k is the amount of latent factors to approximate original matrix
+    U, sigma, Vt = svds(R_demeaned, k = 4)
+
+    # convert to diagonal matrix form, easire for matrix multiplication
+    sigma = np.diag(sigma)
+
+    # not quite sure how this fully works either, it does magic to predict what the user would rate the restaurant
+    # .. adds users means back to get the predicted rating?
+    all_user_predicted_ratings = np.dot(np.dot(U, sigma), Vt) + user_ratings_mean.reshape(-1, 1)
+    # turn predicted ratings into dataframe
+    preds_df = pd.DataFrame(all_user_predicted_ratings, columns = R_df.columns)
+    preds_df = pd.DataFrame(all_user_predicted_ratings, columns = R_df.columns)
+
+    return preds_df
+
 # predicts what the user would rate each unrated restaurant
 def get_recommendations(userID, num_of_recommendations):
     # parse ratings info and restaurant info
@@ -112,18 +129,7 @@ def get_recommendations(userID, num_of_recommendations):
     user_ratings_mean = np.mean(R, axis = 1)
     R_demeaned = R - user_ratings_mean.reshape(-1, 1)
 
-    # this does singular value decomposition.. not to sure what that means.. but it works.. 
-    # k is the amount of latent factors to approximate original matrix
-    U, sigma, Vt = svds(R_demeaned, k = 4)
-
-    # convert to diagonal matrix form, easire for matrix multiplication
-    sigma = np.diag(sigma)
-
-    # not quite sure how this fully works either, it does magic to predict what the user would rate the restaurant
-    # .. adds users means back to get the predicted rating?
-    all_user_predicted_ratings = np.dot(np.dot(U, sigma), Vt) + user_ratings_mean.reshape(-1, 1)
-    # turn predicted ratings into dataframe
-    preds_df = pd.DataFrame(all_user_predicted_ratings, columns = R_df.columns)
+    preds_df = predict_ratings(R_demeaned, user_ratings_mean, R_df)
 
     already_rated, predictions = recommend_food(preds_df, userID, restaurants, ratings, num_of_recommendations, restaurants)
 
@@ -136,7 +142,7 @@ if __name__ == "__main__":
     # for x in recommend(args): print(x)
 
     # get 2 recommendations for userID 2 
-    res = get_recommendations(2, 2)
+    res = get_recommendations(1, 3)
     # will print the names of the restaurants as well as tne cuisines it fits under
     print(res[1])
 
