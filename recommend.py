@@ -89,7 +89,8 @@ def recommend_food(predictions, uID, rID, original_ratings, num_recommendations,
 def predict_ratings(R_demeaned, user_ratings_mean, R_df):
     # this does singular value decomposition.. not to sure what that means.. but it works.. 
     # k is the amount of latent factors to approximate original matrix
-    U, sigma, Vt = svds(R_demeaned, k = 4)
+    print(min(R_demeaned.shape))
+    U, sigma, Vt = svds(R_demeaned, k = max(0,min(R_demeaned.shape) - 1))
 
     # convert to diagonal matrix form, easire for matrix multiplication
     sigma = np.diag(sigma)
@@ -135,13 +136,15 @@ def get_recommendations(userID, num_of_recommendations):
 
     return [already_rated, predictions]
 
+# gonna query the recommender like [{"id": 2, "recommendations": 2}]
+# need more than just the users ratings. could return the whole ratings table or a random number of ratings
+
 if __name__ == "__main__":
     # args = parse_args()
 
     print("starting tailorfood reccomender engine...\n")
     # for x in recommend(args): print(x)
 
-    # get 2 recommendations for userID 2 
     res = get_recommendations(1, 3)
     # will print the names of the restaurants as well as tne cuisines it fits under
     print(res[1])

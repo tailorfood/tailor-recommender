@@ -7,4 +7,9 @@ Copacabana Brazilian Steakhouse,6,0,0,0,0,0,1,1,1,0,0
 Five GuysBurgers,7,0,0,0,0,1,1,0,0,0,0
 New Restaurant,8,0,1,1,1,0,0,0,1,0,0
 New RestaurantB,9,1,1,0,1,0,1,0,1,0,1
-
+Asian1,10,0,1,1,1,0,0,0,0,0,1
+Asian2,11,0,1,1,1,0,0,0,0,0,1
+Asian3,12,0,1,1,1,0,0,0,0,0,1
+NotAsian1,13,0,0,0,0,1,1,1,0,0,0
+NotAsian2,14,0,0,0,0,1,1,1,0,0,0
+NotAsian3,15,0,0,0,0,1,1,1,0,0,0
