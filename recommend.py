@@ -139,6 +139,11 @@ def get_recommendations(userID, num_of_recommendations):
 # gonna query the recommender like [{"id": 2, "recommendations": 2}]
 # need more than just the users ratings. could return the whole ratings table or a random number of ratings
 
+# some aws stuff i still have to read about
+def my_handler(event, context):
+    res = get_recommendations(context['id'], context['recommendations'])
+    return res[1]
+
 if __name__ == "__main__":
     # args = parse_args()
 
