@@ -41,13 +41,3 @@ tim,5,New RestaurantB,9,Sushi,4
 
 
 
-When asked to recommend 2 places for jason to eat, it recommended NewRestaurantB (similiar to fushimi that i like) and Pai (has similiar cuisine characteristics).
-
-tracy, mcdonalds (which is off cause five guys is disliked) and momofuko (good).
-
-jacob, recommends New Restaurant (which is name of the restaurant lmao) (good cause you rated thai very high, and new restaurant is thai) and New RestaurantB (which i guess is okay? cause it has similiar cuisines as PAI and Coco) and five guys (if given 3 recommendations, which is good cause you like 5 guys).
-
-
-
-
-
