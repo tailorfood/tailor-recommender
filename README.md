@@ -5,6 +5,10 @@ Note: Should probably be weighted
 
 The engine takes a dataset containing a user's current location, with their favourite restaurants and cuisines, and recommends a restaurant (or cuisine to try, perhaps) to them within their specified radius.
 
+# Current Working State
+
+Using the sample data, can quiry on a userID and ask for `n` recommendations.
+
 ### Potential goodies
 
 - http://surpriselib.com/
