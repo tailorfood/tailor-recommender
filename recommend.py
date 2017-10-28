@@ -62,7 +62,6 @@ def recommend_food(predictions, uID, rID, original_ratings, num_recommendations,
     
     # Get and sort the user's predictions
     user_row_number = uID - 1 # user starts at 1, not 0
-    # not EXACTLY sure how this works, but it sorts predictions
     sorted_user_predictions = predictions.iloc[user_row_number].sort_values(ascending=False)
     
     # Get the user's data and merge in the food information.
@@ -87,16 +86,14 @@ def recommend_food(predictions, uID, rID, original_ratings, num_recommendations,
     return user_full, recommendations
 
 def predict_ratings(R_demeaned, user_ratings_mean, R_df):
-    # this does singular value decomposition.. not to sure what that means.. but it works.. 
     # k is the amount of latent factors to approximate original matrix
     print(min(R_demeaned.shape))
+    # Single value decomposition
     U, sigma, Vt = svds(R_demeaned, k = max(0,min(R_demeaned.shape) - 1))
 
     # convert to diagonal matrix form, easire for matrix multiplication
     sigma = np.diag(sigma)
 
-    # not quite sure how this fully works either, it does magic to predict what the user would rate the restaurant
-    # .. adds users means back to get the predicted rating?
     all_user_predicted_ratings = np.dot(np.dot(U, sigma), Vt) + user_ratings_mean.reshape(-1, 1)
     # turn predicted ratings into dataframe
     preds_df = pd.DataFrame(all_user_predicted_ratings, columns = R_df.columns)
@@ -135,9 +132,6 @@ def get_recommendations(userID, num_of_recommendations):
     already_rated, predictions = recommend_food(preds_df, userID, restaurants, ratings, num_of_recommendations, restaurants)
 
     return [already_rated, predictions]
-
-# gonna query the recommender like [{"id": 2, "recommendations": 2}]
-# need more than just the users ratings. could return the whole ratings table or a random number of ratings
 
 # some aws stuff i still have to read about
 def my_handler(event, context):
