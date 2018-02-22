@@ -92,7 +92,7 @@ data.json
 bash
 
 ```
-$ ./recommend.py -n 3 -u jake -f data.json
+$ ./recommend.py -n 3 -u jake -d data.json
 starting tailorfood reccomender engine...
 
 {'name': 'KATANA', 'cuisine': 'Sushi'} (cuisine like Ramen)
@@ -102,7 +102,7 @@ starting tailorfood reccomender engine...
 closing.
 ```
 
-- `-f` is for file that holds all our data
-- `-u` is for username
-- `-n` is for for the number of return values [(down here in the deep blue sea)](https://www.youtube.com/watch?v=og8NywgVebU)
+- `-d` file that holds all our data
+- `-u` username
+- `-n`  number of return values
 
