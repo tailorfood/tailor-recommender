@@ -9,6 +9,8 @@ The engine takes a dataset containing a user's current location, with their favo
 
 Using the sample data, can quiry on a userID and ask for `n` recommendations.
 
+Proper docs coming soon.
+
 ### Potential goodies
 
 - http://surpriselib.com/
