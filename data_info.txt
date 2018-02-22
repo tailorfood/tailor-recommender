@@ -39,6 +39,3 @@ tim,5,Coco Rice Thai,4,Thai,1
 tim,5,New RestaurantB,9,Sushi,4
 
 
-
-
-
